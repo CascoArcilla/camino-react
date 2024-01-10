@@ -16,6 +16,7 @@ function FollowMouse() {
   const [enabled, setEnabled] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+  // pointer move
   useEffect(() => {
     console.log("Fireball");
 
@@ -35,6 +36,16 @@ function FollowMouse() {
       window.removeEventListener("pointermove", handleMove);
     };
   }, [enabled]);
+
+  // ocult pointer un body
+  useEffect(() => {
+    document.body.classList.toggle("no-cursor", enabled);
+
+    return () => {
+      document.body.classList.remove("no-cursor");
+    };
+  }, [enabled]);
+
   return (
     <>
       <div
