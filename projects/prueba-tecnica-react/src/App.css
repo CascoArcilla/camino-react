@@ -1,0 +1,39 @@
+.contain-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contain-main p {
+    text-align: justify;
+    font-size: larger;
+}
+
+.cat-image {
+    max-width: 500px;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.butto-show {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: greenyellow;
+    font-weight: bold;
+    border: 1px solid black;
+    box-shadow: 0 4px 0 1px;
+    transition: 0.1s;
+}
+
+.butto-show:active {
+    background-color: coral;
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.butto-show:disabled {
+    background-color: green;
+    color: white;
+}
