@@ -1,52 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { useCatImage, useCatFact } from "./hooks/useCats.js";
 import "./App.css";
 
-const RANDOM_POST = "https://catfact.ninja/fact";
-const IMAGE_CAT = (word) => `https://cataas.com/cat/says/${word}`;
-
 export function App() {
-  const [fact, setFact] = useState();
-  const [urlCat, setUrlCat] = useState();
-  const [isDisable, setIsDiable] = useState(false);
+  const { fact, getFactAndUpdateState } = useCatFact();
+  const { urlImageCat, isDisable, setIsDiable } = useCatImage({ fact });
 
-  const getFact = () => {
-    fetch(RANDOM_POST)
-      .then((res) => res.json())
-      .then((data) => {
-        const { fact } = data;
-        setFact(fact);
-        setIsDiable(true);
-      });
+  const handleButton = () => {
+    setIsDiable(true);
+    getFactAndUpdateState();
   };
-
-  useEffect(() => {
-    getFact();
-  }, []);
-
-  useEffect(() => {
-    if (!fact) return;
-    const firstWord = fact.split(" ")[0];
-
-    fetch(IMAGE_CAT(firstWord)).then((res) => {
-      console.log(res);
-      const { url } = res;
-      setUrlCat(url);
-      setIsDiable(false);
-    });
-  }, [fact]);
 
   return (
     <main className="contain-main">
-      <h1>Datos aleatorios</h1>
-      <button className="butto-show" onClick={getFact} disabled={isDisable}>
-        {isDisable.current ? "Cargando..." : "Show other info"}
+      <h1>Datos felinos</h1>
+      <button
+        className="butto-show"
+        onClick={handleButton}
+        disabled={isDisable}
+      >
+        {isDisable ? "Cargando..." : "New Fact"}
       </button>
       {fact && <p>{fact}</p>}
-      {urlCat && (
+      {urlImageCat && (
         <img
           className="cat-image"
-          src={urlCat}
-          alt={`A image cat get to ${urlCat}`}
+          src={urlImageCat}
+          alt={`A image cat get to ${urlImageCat}`}
         />
       )}
     </main>
