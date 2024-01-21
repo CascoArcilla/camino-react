@@ -1,0 +1,76 @@
+{
+  "Search": [
+    {
+      "Title": "El libro de piedra",
+      "Year": "2009",
+      "imdbID": "tt0353665",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTZhMmQ3NjQtYWY4Ni00M2EyLTliZmQtZTBiMzgxODQwZDkyXkEyXkFqcGdeQXVyMTExODQ3Nzk2._V1_SX300.jpg"
+    },
+    {
+      "Title": "El libro de buen amor",
+      "Year": "1975",
+      "imdbID": "tt0071750",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZTZiNzg4OTctYTA0YS00NTMwLTg2NDEtYWY4NDM3MTA1Y2MzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQ5ODY1ODc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "El libro de buen amor II",
+      "Year": "1976",
+      "imdbID": "tt0073289",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjQ2Yjk4OTMtNjU2MS00ZGM1LWFkYjktZWQyZmI4ZWNlOTIyXkEyXkFqcGdeQXVyMTAxMDQ0ODk@._V1_SX300.jpg"
+    },
+    {
+      "Title": "El libro de las aguas",
+      "Year": "2008",
+      "imdbID": "tt1239448",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzY0NjBkOGYtZjU5MC00NmE3LWFhNjAtMjQwZDYxZjc1MTJkXkEyXkFqcGdeQXVyMTM2Mzg4MA@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "El libro gordo de Petete",
+      "Year": "1980–",
+      "imdbID": "tt0295113",
+      "Type": "series",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "El libro talonario",
+      "Year": "2007",
+      "imdbID": "tt1186807",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "El libro",
+      "Year": "2019",
+      "imdbID": "tt10897712",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDE1MzQ5YjAtN2IyNi00OGQwLTk5NjMtYzU4YzQ0MjI2YTc2XkEyXkFqcGdeQXVyOTI1Mzk5MjY@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Enrique Bunbury MTV Unplugged: El libro de las mutaciones",
+      "Year": "2015",
+      "imdbID": "tt5248554",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZGQxN2ZhYTQtNGVmNi00MGE2LTgwMjgtN2I4ZTU1NDc5YmMxXkEyXkFqcGdeQXVyMTI5MDc0NDg5._V1_SX300.jpg"
+    },
+    {
+      "Title": "El libro",
+      "Year": "2008",
+      "imdbID": "tt1314202",
+      "Type": "movie",
+      "Poster": "N/A"
+    },
+    {
+      "Title": "El libro gordo de Petete",
+      "Year": "1981–1983",
+      "imdbID": "tt0881147",
+      "Type": "series",
+      "Poster": "N/A"
+    }
+  ],
+  "totalResults": "32",
+  "Response": "True"
+}
