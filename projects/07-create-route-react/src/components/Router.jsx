@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { EVENTS } from "./cosnts.js";
+import { Children, useEffect, useState } from "react";
+import { EVENTS } from "../cosnts.js";
 import { match } from "path-to-regexp";
 
 export default function Router({
   routes = [],
   defaultComponent: DefaultComponent = () => <h1>404</h1>,
+  children,
 }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
@@ -24,7 +25,17 @@ export default function Router({
 
   let routeParams = {};
 
-  const Page = routes.find(({ path }) => {
+  const routesChildren = Children.map(children, ({ props, type }) => {
+    const { name } = type;
+    const isRoute = name == "Route";
+
+    if (!isRoute) return null;
+    return props;
+  });
+
+  const allRoutesUse = routes.concat(routesChildren);
+
+  const Page = allRoutesUse.find(({ path }) => {
     if (path === currentPath) return true;
 
     /*

@@ -1,4 +1,4 @@
-import { EVENTS } from "./cosnts";
+import { EVENTS } from "../cosnts";
 
 export function navigate(href) {
   window.history.pushState({}, "", href);
