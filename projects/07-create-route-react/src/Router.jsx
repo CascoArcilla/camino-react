@@ -1,18 +1,6 @@
 import { useEffect, useState } from "react";
 import { EVENTS } from "./cosnts.js";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-
-export const appRoutes = [
-  {
-    path: "/",
-    Component: Home,
-  },
-  {
-    path: "/about",
-    Component: About,
-  },
-];
+import { match } from "path-to-regexp";
 
 export default function Router({
   routes = [],
@@ -34,7 +22,32 @@ export default function Router({
     };
   }, []);
 
-  const Page = routes.find(({ path }) => path === currentPath)?.Component;
+  let routeParams = {};
 
-  return Page ? <Page /> : <DefaultComponent />;
+  const Page = routes.find(({ path }) => {
+    if (path === currentPath) return true;
+
+    /*
+    se usa el path-to-regexp para detectar rutas dinamicas
+    como: /search/:query
+    */
+    const matcherUrl = match(path, { decode: decodeURIComponent });
+    const matched = matcherUrl(currentPath);
+    if (!matched) return false;
+
+    /*
+    se guardan los parametros de la url que eran dinamicos
+    si ruta es /search/:query
+    y la url es /search/nodejs
+    mathced.params.query === nodejs
+    */
+    routeParams = matched.params;
+    return true;
+  })?.Component;
+
+  return Page ? (
+    <Page routeParams={routeParams} />
+  ) : (
+    <DefaultComponent routeParams={routeParams} />
+  );
 }
