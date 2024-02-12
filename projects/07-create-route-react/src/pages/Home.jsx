@@ -5,7 +5,11 @@ export default function Home() {
     <>
       <h1>Home</h1>
       <p>Hola, estas en el home para hacer una react router desde cero</p>
-      <Link to="/about">Ir a about</Link>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <Link to="/about">Ir a about</Link>
+        <Link to="/en/about">Go to about</Link>
+        <Link to="/animals">Ir a animales</Link>
+      </div>
     </>
   );
 }
